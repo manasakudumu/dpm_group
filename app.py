@@ -46,8 +46,7 @@ def get_menu(date, locationId, mealId):
         menu_items = response.json()
         filtered_items = []
         for item in menu_items:
-            # item['date'] is like "2025-03-31T00:00:00"
-            item_date = item.get('date', '').split('T')[0]  # only keep YYYY-MM-DD
+            item_date = item.get('date', '').split('T')[0] 
             if item_date == date:
                 food = {
                     'Name': item.get('name', 'N/A'),
